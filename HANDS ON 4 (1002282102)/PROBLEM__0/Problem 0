@@ -1,0 +1,28 @@
+PROBLEM 0
+Function Call
+fib(5)	fib(4) + fib(3)	5
+fib(4)	fib(3) + fib(2)	3
+fib(3)	fib(2) + fib(1)	2
+fib(2)	fib(1) + fib(0)	1
+fib(1)	Base case → Returns 1	1
+fib(0)	Base case → Returns 0	0
+fib(2)	fib(1) + fib(0)	1
+fib(3)	fib(2) + fib(1)	2
+fib(2)	fib(1) + fib(0)	1
+fib(1)	Base case → Returns 1	1
+
+OPTIMIZING TECHNIQUE
+1)	WE CAN USE VARIABLES LIKE a,b
+Like adding 
+a,b =0,1
+for range (2, n+1)
+a,b=b,a+b
+space complexity reduced 
+
+TIME COMPLEXITY:
+T(n) = T(n-1) + T(n-2) + O(1)
+T(n-1) = T(n-2)+ T(n-3) + O(1)
+…………………………………………..
+By back substituting
+T(n) = T(n-2) + 2T(n-2)+ T(n-4) + O(1)
+T(n) = O(2^n)
